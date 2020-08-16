@@ -10,9 +10,10 @@ import {
 } from "reactstrap";
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const Search = styled.input`
-  margin-right: 20px;
+  margin-right: 30px;
   padding: 8px 16px;
   font-size: 1rem;
   border: none;
@@ -26,6 +27,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onToggle = () => setIsOpen(!isOpen);
+  const router = useRouter();
 
   return (
     <Navbar dark={true} color="dark" expand="md">
@@ -38,17 +40,25 @@ const Navigation = () => {
           </NavItem>
           <NavItem>
             <Link href="/" passHref>
-              <NavLink>Home</NavLink>
+              <NavLink className={router.pathname === "/" ? "active" : ""}>
+                Home
+              </NavLink>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/about" passHref>
-              <NavLink>About</NavLink>
+              <NavLink className={router.pathname === "/about" ? "active" : ""}>
+                About
+              </NavLink>
             </Link>
           </NavItem>
           <NavItem>
             <Link href="/contact" passHref>
-              <NavLink>Contact</NavLink>
+              <NavLink
+                className={router.pathname === "/contact" ? "active" : ""}
+              >
+                Contact
+              </NavLink>
             </Link>
           </NavItem>
         </Nav>

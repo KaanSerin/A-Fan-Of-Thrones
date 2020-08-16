@@ -6,6 +6,7 @@ import styled from "styled-components";
 const Main = styled.main`
   width: 70%;
   margin: auto;
+  padding: 20px 0;
   min-height: 86vh;
   font-size: 20px;
   text-align: center;
@@ -25,6 +26,12 @@ const Layout = ({ children }) => {
       <Head>
         <title>A Fan of Thrones</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://unpkg.com/nprogress@0.2.0/nprogress.css"
+        />
+        <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js" />;
       </Head>
       <header>
         <Navigation />
