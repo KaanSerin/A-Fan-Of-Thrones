@@ -4,16 +4,16 @@ import { Button } from "reactstrap";
 
 const Card = styled.div`
   margin: 20px auto;
-  padding: 20px;
+  padding: 10px;
 
   height: 420px;
   width: 320px;
 
-  border: 1px solid black;
+  border: 1px solid #ccc;
   font-size: 1.1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   p {
@@ -22,14 +22,15 @@ const Card = styled.div`
 
   img {
     object-fit: contain;
-    height: 60%;
+    height: 55%;
+    margin-bottom: 5px;
   }
 `;
 
 const CharacterCard = ({ data }) => {
   return (
     <Card>
-      <h4>Name: {data.name}</h4>
+      <h4>{data.name}</h4>
       <img
         src={data.image}
         alt="A knight wearing chainmail armor looking super angry"

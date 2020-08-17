@@ -13,7 +13,7 @@ import styled from "styled-components";
 import { useRouter } from "next/router";
 
 const Search = styled.input`
-  margin-right: 30px;
+  margin: auto 30px;
   padding: 8px 16px;
   font-size: 1rem;
   border: none;
@@ -36,15 +36,36 @@ const Navigation = () => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <Search type="text" placeholder="Search for a character!" />
-          </NavItem>
-          <NavItem>
             <Link href="/" passHref>
               <NavLink className={router.pathname === "/" ? "active" : ""}>
                 Home
               </NavLink>
             </Link>
           </NavItem>
+          <NavItem>
+            <Link href="/characters" passHref>
+              <NavLink
+                className={router.pathname === "/characters" ? "active" : ""}
+              >
+                Characters
+              </NavLink>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/cities" passHref>
+              <NavLink
+                className={router.pathname === "/cities" ? "active" : ""}
+              >
+                Cities
+              </NavLink>
+            </Link>
+          </NavItem>
+
+          {/* Search Box */}
+          <NavItem>
+            <Search type="text" placeholder="Search for a character!" />
+          </NavItem>
+
           <NavItem>
             <Link href="/about" passHref>
               <NavLink className={router.pathname === "/about" ? "active" : ""}>

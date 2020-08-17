@@ -4,20 +4,26 @@ import { Button } from "reactstrap";
 
 const House = styled.div`
   margin: 20px auto;
-  padding: 10px 0;
+  padding: 10px 30px;
 
-  height: 600px;
+  height: 450px;
   width: 90%;
 
-  border: 1px solid red;
+  border: 1px solid #ccc;
   font-size: 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 
   img {
+    object-fit: contain;
     width: 60%;
+    height: 100%;
+  }
+
+  div.details {
+    width: 35%;
+    margin: 0 auto;
   }
 `;
 
@@ -26,10 +32,12 @@ const HouseCard = ({ data }) => {
   return (
     <House>
       <img src="/images/castle.jpg" alt="Image of a castle interior" />
-      <h4>House Name: {data.name}</h4>
-      <p>Location: {data.location}</p>
-      <p>Type: {data.type}</p>
-      <Button color="info">Learn More</Button>
+      <div className="details">
+        <h4>House Name: {data.name}</h4>
+        <p>Location: {data.location}</p>
+        <p>Type: {data.type}</p>
+        <Button color="info">Learn More</Button>
+      </div>
     </House>
   );
 };
