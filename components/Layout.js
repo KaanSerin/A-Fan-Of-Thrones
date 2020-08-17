@@ -4,7 +4,11 @@ import Navigation from "./Navigation";
 import styled from "styled-components";
 
 const Main = styled.main`
-  width: 70%;
+  * {
+    box-sizing: border-box;
+  }
+
+  width: 75%;
   margin: auto;
   padding: 20px 0;
   min-height: 86vh;
@@ -39,7 +43,11 @@ const Layout = ({ children }) => {
 
       <Main>{children}</Main>
 
-      <Footer>A fan site made with ❤️ by Kaan Serin</Footer>
+      <Footer>
+        A fan site made with{" "}
+        <span style={{ display: "inline-block", color: "black" }}>❤</span> by
+        Kaan Serin
+      </Footer>
     </>
   );
 };

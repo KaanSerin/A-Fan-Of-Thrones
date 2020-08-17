@@ -1,9 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Router from "next/router";
 import NProgress from "nprogress";
-
 NProgress.configure({ showSpinner: false });
-
 Router.onRouteChangeStart = () => {
   NProgress.start();
 };

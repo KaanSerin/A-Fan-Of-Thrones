@@ -17,9 +17,9 @@ export default function index({ favChars, favHouse }) {
 
 export const getServerSideProps = async (context) => {
   const favUrls = [
-    "https://www.anapioficeandfire.com/api/characters/216",
-    "https://www.anapioficeandfire.com/api/characters/1052",
-    "https://www.anapioficeandfire.com/api/characters/823",
+    "https://api.got.show/api/book/characters/Brienne%20of%20Tarth",
+    "https://api.got.show/api/book/characters/Tyrion%20Lannister",
+    "https://api.got.show/api/book/characters/Tywin%20Lannister",
   ];
 
   const favChars = [];
@@ -29,10 +29,10 @@ export const getServerSideProps = async (context) => {
     favChars.push(res.data);
   }
 
-  const favHouseUrl = "https://www.anapioficeandfire.com/api/houses/7";
+  const favHouseUrl = "https://api.got.show/api/show/castles/The%20Eyrie";
 
   const res = await axios.get(favHouseUrl);
-  const favHouse = await res.data;
+  const favHouse = await res.data[0];
 
   return {
     props: {

@@ -14,19 +14,22 @@ const House = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  text-align: center;
+  align-items: center;
+
+  img {
+    width: 60%;
+  }
 `;
 
 const HouseCard = ({ data }) => {
   console.log(data);
   return (
     <House>
+      <img src="/images/castle.jpg" alt="Image of a castle interior" />
       <h4>House Name: {data.name}</h4>
-      <p>Region: {data.region}</p>
-      <p>Words: {data.words}</p>
-      <Button color="info" className="mx-5">
-        Learn More
-      </Button>
+      <p>Location: {data.location}</p>
+      <p>Type: {data.type}</p>
+      <Button color="info">Learn More</Button>
     </House>
   );
 };
