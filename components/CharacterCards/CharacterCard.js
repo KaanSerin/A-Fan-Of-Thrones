@@ -22,7 +22,8 @@ const Card = styled.div`
 
   img {
     object-fit: contain;
-    height: 55%;
+    height: 52%;
+    width: auto;
     margin-bottom: 5px;
   }
 `;
@@ -30,9 +31,9 @@ const Card = styled.div`
 const CharacterCard = ({ data }) => {
   return (
     <Card>
-      <h4>{data.name}</h4>
+      <h4>{data.name !== "" ? data.name : "Unknown"}</h4>
       <img
-        src={data.image}
+        src={data.image ? data.image : "./images/knight.jpg"}
         alt="A knight wearing chainmail armor looking super angry"
       />
       <p>Titles: {data.titles[0] ? data.titles[0] : "None"}</p>

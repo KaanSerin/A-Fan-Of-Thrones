@@ -28,10 +28,12 @@ const House = styled.div`
 `;
 
 const HouseCard = ({ data }) => {
-  console.log(data);
   return (
     <House>
-      <img src="/images/castle.jpg" alt="Image of a castle interior" />
+      <img
+        src={data.image ? data.image : "/images/castle.jpg"}
+        alt="Image of a castle interior"
+      />
       <div className="details">
         <h4>House Name: {data.name}</h4>
         <p>Location: {data.location}</p>

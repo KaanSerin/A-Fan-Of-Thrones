@@ -33,6 +33,8 @@ export const getServerSideProps = async (context) => {
 
   const res = await axios.get(favHouseUrl);
   const favHouse = await res.data[0];
+  favHouse.image =
+    "https://awoiaf.westeros.org/images/thumb/8/8f/The_Eyrie-TN.jpg/250px-The_Eyrie-TN.jpg";
 
   return {
     props: {

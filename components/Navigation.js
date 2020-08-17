@@ -43,9 +43,11 @@ const Navigation = () => {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/characters" passHref>
+            <Link href="/characters?page=1" passHref>
               <NavLink
-                className={router.pathname === "/characters" ? "active" : ""}
+                className={
+                  router.pathname === "/characters?page=1" ? "active" : ""
+                }
               >
                 Characters
               </NavLink>
