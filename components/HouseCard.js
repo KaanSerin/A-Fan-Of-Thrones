@@ -36,8 +36,7 @@ const HouseCard = ({ data }) => {
       />
       <div className="details">
         <h4>House Name: {data.name}</h4>
-        <p>Location: {data.location}</p>
-        <p>Type: {data.type}</p>
+        <p>Location: {data.location ? data.location : data.region}</p>
         <Button color="info">Learn More</Button>
       </div>
     </House>

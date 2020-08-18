@@ -36,7 +36,7 @@ const CharacterCard = ({ data }) => {
         src={data.image ? data.image : "./images/knight.jpg"}
         alt="A knight wearing chainmail armor looking super angry"
       />
-      <p>Titles: {data.titles[0] ? data.titles[0] : "None"}</p>
+      <p>Alias: {data.aliases ? data.aliases[0] : "None"}</p>
       <p>Gender: {data.gender}</p>
       <Button color="info" className="mx-5">
         Learn More

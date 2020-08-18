@@ -1,35 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-import axios from "axios";
 import Layout from "../components/Layout";
-import CharacterCard from "../components/CharacterCards/CharacterCard";
+import Axios from "axios";
+import HouseCard from "../components/HouseCard";
 import { v4 as uuid } from "uuid";
-import { Button } from "reactstrap";
 import { useRouter } from "next/router";
+import { Button } from "reactstrap";
 
-const CharactersStyled = styled.div`
+const HousesStyled = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: 1fr;
 `;
 
-const Characters = ({ data }) => {
+const Houses = ({ data }) => {
   const router = useRouter();
   const page = +router.query.page;
 
   const onNextPage = () => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For IE, Chrome and Firefox
-    router.push(`/characters?page=${page + 1}`);
+    router.push(`/houses?page=${page + 1}&pageSize=10`);
   };
 
   return (
     <Layout>
-      <CharactersStyled>
-        {data.map((character) => (
-          <CharacterCard key={uuid()} data={character} />
+      <HousesStyled>
+        {data.map((house) => (
+          <HouseCard key={uuid()} data={house} />
         ))}
-      </CharactersStyled>
-
+      </HousesStyled>
       <Button onClick={onNextPage} color="danger">
         Next Page
       </Button>
@@ -38,14 +37,12 @@ const Characters = ({ data }) => {
 };
 
 export const getServerSideProps = async (context) => {
-  console.log(context.query);
   const page = +context.query.page;
+  const url = `https://www.anapioficeandfire.com/api/houses?page=${page}&pageSize=10`;
 
-  const response = await axios.get(
-    `https://www.anapioficeandfire.com/api/characters?page=${page}&pageSize=20`
-  );
-
+  const response = await Axios.get(url);
   const data = await response.data;
+
   return {
     props: {
       data,
@@ -53,4 +50,4 @@ export const getServerSideProps = async (context) => {
   };
 };
 
-export default Characters;
+export default Houses;
