@@ -19,5 +19,8 @@
     "reactstrap": "^8.5.1",
     "styled-components": "^5.1.1",
     "uuid": "^8.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.11.1"
   }
 }

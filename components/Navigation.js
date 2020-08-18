@@ -12,7 +12,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { useRouter } from "next/router";
 
-const Search = styled.input`
+const StyledInput = styled.input`
   margin: auto 30px;
   padding: 8px 16px;
   font-size: 1rem;
@@ -69,7 +69,9 @@ const Navigation = () => {
 
           {/* Search Box */}
           <NavItem>
-            <Search type="text" placeholder="Search for a character!" />
+            {/* <StyledInput> */}
+            <StyledInput type="text" placeholder="Search for a character!" />
+            {/* </StyledInput> */}
           </NavItem>
 
           <NavItem>

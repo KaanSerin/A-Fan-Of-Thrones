@@ -1,0 +1,26 @@
+.HouseDetails {
+  padding: 20px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+
+.HouseDetails ul {
+  list-style: decimal;
+}
+
+.HouseDetails h3,
+.HouseDetails p,
+.HouseDetails div {
+  margin-bottom: 20px;
+}
+
+.HouseContainer img,
+.HouseDetails {
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 8px 1px rgba(173, 173, 173, 1);
+  -moz-box-shadow: 0px 0px 8px 1px rgba(173, 173, 173, 1);
+  box-shadow: 0px 0px 8px 1px rgba(173, 173, 173, 1);
+}

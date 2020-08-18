@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "reactstrap";
+import { useRouter } from "next/router";
 
 const Card = styled.div`
   margin: 20px auto;
@@ -29,6 +30,12 @@ const Card = styled.div`
 `;
 
 const CharacterCard = ({ data }) => {
+  const router = useRouter();
+
+  const onLearnMore = () => {
+    router.push(`/character/${data.name}`);
+  };
+
   return (
     <Card>
       <h4>{data.name !== "" ? data.name : "Unknown"}</h4>
@@ -38,7 +45,12 @@ const CharacterCard = ({ data }) => {
       />
       <p>Alias: {data.aliases ? data.aliases[0] : "None"}</p>
       <p>Gender: {data.gender}</p>
-      <Button color="info" className="mx-5">
+      <Button
+        onClick={onLearnMore}
+        color="info"
+        className="mx-5"
+        disabled={data.name !== "" ? false : true}
+      >
         Learn More
       </Button>
     </Card>

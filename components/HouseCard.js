@@ -1,13 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import { Button } from "reactstrap";
+import { useRouter } from "next/router";
 
 const House = styled.div`
   margin: 20px auto;
   padding: 10px 30px;
 
   height: 450px;
-  width: 90%;
+  width: 100%;
 
   border: 1px solid #ccc;
   font-size: 1.5rem;
@@ -28,6 +29,12 @@ const House = styled.div`
 `;
 
 const HouseCard = ({ data }) => {
+  const router = useRouter();
+
+  const onLearnMore = () => {
+    router.push(`/house/${data.name}`);
+  };
+
   return (
     <House>
       <img
@@ -37,7 +44,9 @@ const HouseCard = ({ data }) => {
       <div className="details">
         <h4>House Name: {data.name}</h4>
         <p>Location: {data.location ? data.location : data.region}</p>
-        <Button color="info">Learn More</Button>
+        <Button onClick={onLearnMore} color="info">
+          Learn More
+        </Button>
       </div>
     </House>
   );
