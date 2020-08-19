@@ -30,7 +30,7 @@ const Navigation = () => {
   const router = useRouter();
 
   return (
-    <Navbar dark={true} color="dark" expand="md">
+    <Navbar dark={true} color="dark" expand="lg">
       <NavbarBrand href="/">A Fan of Thrones</NavbarBrand>
       <NavbarToggler onClick={onToggle} />
       <Collapse isOpen={isOpen} navbar>

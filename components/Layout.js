@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
 import Navigation from "./Navigation";
 import styled from "styled-components";
@@ -11,9 +11,9 @@ const Main = styled.main`
   width: 75%;
   margin: auto;
   padding: 20px 0;
-  min-height: 86vh;
   font-size: 20px;
   text-align: center;
+  flex-grow: 1;
 `;
 
 const Footer = styled.footer`
@@ -26,7 +26,7 @@ const Footer = styled.footer`
 
 const Layout = ({ children }) => {
   return (
-    <>
+    <div className="full-height-grow">
       <Head>
         <title>A Fan of Thrones</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
@@ -48,7 +48,7 @@ const Layout = ({ children }) => {
         <span style={{ display: "inline-block", color: "black" }}>❤</span> by
         Kaan Serin
       </Footer>
-    </>
+    </div>
   );
 };
 
