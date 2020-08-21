@@ -40,7 +40,7 @@ const CharacterCard = ({ data }) => {
     <Card>
       <h4>{data.name !== "" ? data.name : "Unknown"}</h4>
       <img
-        src={data.image ? data.image : "./images/knight.jpg"}
+        src={data.image ? data.image : "/images/knight.jpg"}
         alt="A knight wearing chainmail armor looking super angry"
       />
       <p>Alias: {data.aliases ? data.aliases[0] : "None"}</p>

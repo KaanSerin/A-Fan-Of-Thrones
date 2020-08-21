@@ -46,7 +46,10 @@ const Navigation = () => {
             <Link href="/characters?page=1" passHref>
               <NavLink
                 className={
-                  router.pathname === "/characters?page=1" ? "active" : ""
+                  router.pathname === "/characters" ||
+                  router.pathname === "/character/[name]"
+                    ? "active"
+                    : ""
                 }
               >
                 Characters
@@ -57,7 +60,8 @@ const Navigation = () => {
             <Link href="/houses?page=1&pageSize=10" passHref>
               <NavLink
                 className={
-                  router.pathname === "/houses?page=1&pageSize=10"
+                  router.pathname === "/houses" ||
+                  router.pathname === "/house/[name]"
                     ? "active"
                     : ""
                 }
@@ -67,11 +71,8 @@ const Navigation = () => {
             </Link>
           </NavItem>
 
-          {/* Search Box */}
           <NavItem>
-            {/* <StyledInput> */}
             <StyledInput type="text" placeholder="Search for a character!" />
-            {/* </StyledInput> */}
           </NavItem>
 
           <NavItem>
