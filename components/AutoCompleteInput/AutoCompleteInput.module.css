@@ -1,0 +1,49 @@
+.Input {
+  margin: auto 30px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  width: 300px;
+  color: #444;
+  outline: none;
+}
+
+.SuggestionContainer {
+  position: relative;
+}
+
+.SuggestionList {
+  position: absolute;
+  top: 0;
+  left: 11%;
+  width: 80%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.Suggestion {
+  padding: 8px;
+  background-color: white;
+
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+}
+
+.Suggestion:hover {
+  cursor: pointer;
+  background-color: #dadada;
+}
+
+.Suggestion:first-of-type {
+  border-top: 1px solid #555;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.Suggestion:last-of-type {
+  border-bottom: 1px solid #555;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

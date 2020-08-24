@@ -32,9 +32,10 @@ export const getServerSideProps = async (context) => {
   const favHouseUrl = "https://api.got.show/api/show/castles/The%20Eyrie";
 
   const res = await axios.get(favHouseUrl);
-  const favHouse = await res.data[0];
+  let favHouse = await res.data[0];
   favHouse.image =
     "https://awoiaf.westeros.org/images/thumb/8/8f/The_Eyrie-TN.jpg/250px-The_Eyrie-TN.jpg";
+  favHouse = { ...favHouse, name: "House Arryn of the Eyrie" };
 
   return {
     props: {

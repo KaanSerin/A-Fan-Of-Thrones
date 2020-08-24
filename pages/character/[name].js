@@ -95,7 +95,6 @@ const Character = ({ data }) => {
 
 export const getServerSideProps = async (context) => {
   const name = context.query.name;
-  console.log(name);
   const response = await axios.get(
     `https://api.got.show/api/book/characters/${name}`
   );

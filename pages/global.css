@@ -7,3 +7,14 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.navbar {
+  padding: 5px 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0;
+  width: 75%;
+  max-width: 1200px;
+}

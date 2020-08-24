@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Head from "next/head";
 import Navigation from "./Navigation";
 import styled from "styled-components";
@@ -9,6 +9,7 @@ const Main = styled.main`
   }
 
   width: 75%;
+  max-width: 1200px;
   margin: auto;
   padding: 20px 0;
   font-size: 20px;
