@@ -1,11 +1,22 @@
 import React from "react";
 import Layout from "../components/Layout";
+import styled from "styled-components";
+
+const AboutPage = styled.div`
+  .title {
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 2.6rem;
+  }
+`;
 
 const about = ({}) => {
   return (
     <Layout>
-      <div>
-        <h2>About Page</h2>
+      <AboutPage>
+        <h2>About Me</h2>
         <p>
           Godfather ipsum dolor sit amet. This one time, this one time I'll let
           you ask me about my affairs. Sonny, please don't do anything. Please
@@ -21,7 +32,7 @@ const about = ({}) => {
           family Kay, that's not me. Don't ever give an order like that again.
           Not while I'm alive.
         </p>
-      </div>
+      </AboutPage>
     </Layout>
   );
 };

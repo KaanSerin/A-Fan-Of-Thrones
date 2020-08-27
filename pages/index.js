@@ -8,18 +8,17 @@ export default function index({ favChars, favHouse }) {
     <Layout>
       <h2>My Favorite Characters</h2>
       <CharacterCards data={favChars} />
-      <hr />
-      <h2>My Favorite Location</h2>
+      <h2 style={{ marginTop: "20px" }}>My Favorite Location</h2>
       <HouseCard data={favHouse} />
     </Layout>
   );
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async () => {
   const favUrls = [
-    "https://api.got.show/api/book/characters/Brienne%20of%20Tarth",
-    "https://api.got.show/api/book/characters/Tyrion%20Lannister",
-    "https://api.got.show/api/book/characters/Tywin%20Lannister",
+    "https://anapioficeandfire.com/api/characters/216",
+    "https://anapioficeandfire.com/api/characters/1052",
+    "https://anapioficeandfire.com/api/characters/27",
   ];
 
   const favChars = [];
@@ -28,6 +27,13 @@ export const getServerSideProps = async (context) => {
     const res = await axios.get(url);
     favChars.push(res.data);
   }
+
+  favChars[0].image =
+    "https://awoiaf.westeros.org/thumb.php?f=Brienne_by_quickreaver.jpg&width=300";
+  favChars[1].image =
+    "https://awoiaf.westeros.org/thumb.php?f=Tyrion_lannister_Sebastian_Giacobino.jpg&width=350";
+  favChars[2].image =
+    "https://awoiaf.westeros.org/thumb.php?f=Brittmartin_TywinL.jpg&width=300";
 
   const favHouseUrl = "https://api.got.show/api/show/castles/The%20Eyrie";
 

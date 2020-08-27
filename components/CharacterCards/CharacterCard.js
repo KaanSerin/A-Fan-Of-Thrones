@@ -4,7 +4,7 @@ import { Button } from "reactstrap";
 import { useRouter } from "next/router";
 
 const Card = styled.div`
-  margin: 20px auto;
+  margin: 20px 0;
   padding: 10px;
 
   height: 420px;
@@ -43,7 +43,7 @@ const CharacterCard = ({ data }) => {
         src={data.image ? data.image : "/images/knight.jpg"}
         alt="A knight wearing chainmail armor looking super angry"
       />
-      <p>Alias: {data.aliases ? data.aliases[0] : "None"}</p>
+      <p>Alias: {data.aliases[0] !== "" ? data.aliases[0] : "None"}</p>
       <p>Gender: {data.gender}</p>
       <Button
         onClick={onLearnMore}

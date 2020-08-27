@@ -11,9 +11,8 @@ const Main = styled.main`
   width: 75%;
   max-width: 1200px;
   margin: auto;
-  padding: 20px 0;
+  padding: 30px 0;
   font-size: 20px;
-  text-align: center;
   flex-grow: 1;
 `;
 
@@ -45,8 +44,8 @@ const Layout = ({ children }) => {
       <Main>{children}</Main>
 
       <Footer>
-        A fan site made with{" "}
-        <span style={{ display: "inline-block", color: "black" }}>❤</span> by
+        A fan site made with
+        <span style={{ display: "inline-block", margin: "0 6px" }}> ❤ </span> by
         Kaan Serin
       </Footer>
     </div>

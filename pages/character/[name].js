@@ -9,26 +9,24 @@ const CharacterSection = styled.div`
   margin-top: 70px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 5px;
+  gap: 20px;
 
   .character-details {
-    padding: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    padding: 0 10%;
+    align-items: start;
+    text-align: start;
   }
 
-  .character-details:not(:last-child) {
-    border-right: 1px solid rgba(200, 200, 200, 0.4);
+  .character-detail {
+    display: list-item;
+    list-style: circle;
+    margin-bottom: 20px;
   }
 
   .list-with-title {
     width: 100%;
-  }
-
-  .character-details * {
-    margin-top: 10px;
   }
 
   .character-details ul {
@@ -38,9 +36,8 @@ const CharacterSection = styled.div`
     padding: 0;
   }
 
-  .character-details img {
+  img {
     width: 100%;
-    padding: 10px;
   }
 `;
 
@@ -48,17 +45,19 @@ const Character = ({ data }) => {
   return (
     <Layout>
       <CharacterSection>
+        <img src={valueOrDefault(data.image, "/images/knight.jpg")} />
         <div className="character-details">
-          <img src={valueOrDefault(data.image, "/images/knight.jpg")} />
-        </div>
-        <div className="character-details">
-          <h3>Full Name: {data.name}</h3>
-          <h5>Gender: {_.capitalize(data.gender)}</h5>
-          <h5>Year of Birth: {valueOrDefault(data.birth, "Unknown")}</h5>
-          <h5>
+          <h3 className="character-detail">Full Name: {data.name}</h3>
+          <h5 className="character-detail">
+            Gender: {_.capitalize(data.gender)}
+          </h5>
+          <h5 className="character-detail">
+            Year of Birth: {valueOrDefault(data.birth, "Unknown")}
+          </h5>
+          <h5 className="character-detail">
             Place of Birth: {valueOrDefault(data.placeOfBirth, "Unknown")}
           </h5>
-          <div className="list-with-title">
+          <div className="list-with-title character-detail">
             <h5>Spouse: </h5>
             <ul>
               {data.spouse.length > 0
@@ -69,17 +68,17 @@ const Character = ({ data }) => {
             </ul>
           </div>
 
-          <div className="list-with-title">
+          <div className="list-with-title character-detail">
             <h5>Children: </h5>
             <ul>{listOrDefault(data.children, "None")}</ul>
           </div>
 
-          <h5>
+          <h5 className="character-detail">
             Culture: {valueOrDefault(_.capitalize(data.culture), "Unknown")}
           </h5>
         </div>
         <div className="character-details">
-          <div className="list-with-title">
+          <div className="list-with-title character-detail">
             <h3>Titles: </h3>
             <ul>{listOrDefault(data.titles, "None")}</ul>
           </div>
