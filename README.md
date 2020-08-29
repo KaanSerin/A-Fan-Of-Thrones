@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Made Using React and Nextjs.
+<br>Hosted <a href="https://a-fan-of-thrones.vercel.app/">here</a>.
