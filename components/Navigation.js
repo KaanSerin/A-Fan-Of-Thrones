@@ -41,7 +41,15 @@ const Navigation = () => {
   return (
     <Navbar dark={true} color="dark" expand="lg">
       <div className="container">
-        <NavbarBrand href="/">A Fan of Thrones</NavbarBrand>
+        <NavbarBrand
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: "1.5rem",
+          }}
+          href="/"
+        >
+          A Fan of Thrones
+        </NavbarBrand>
         <NavbarToggler onClick={onToggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>

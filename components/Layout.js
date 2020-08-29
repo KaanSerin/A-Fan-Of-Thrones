@@ -40,6 +40,10 @@ const Layout = ({ children }) => {
         />
         <meta name="author" content="Kaan Serin" />
         <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+        <link
           rel="stylesheet"
           type="text/css"
           href="https://unpkg.com/nprogress@0.2.0/nprogress.css"

@@ -36,7 +36,7 @@ const HouseCard = ({ data }) => {
   };
 
   return (
-    <House>
+    <House className="box-card">
       <img
         src={data.image ? data.image : "/images/castle.jpg"}
         alt="Image of a castle interior"

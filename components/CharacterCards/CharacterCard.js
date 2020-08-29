@@ -37,7 +37,7 @@ const CharacterCard = ({ data }) => {
   };
 
   return (
-    <Card>
+    <Card className="box-card">
       <h4>{data.name !== "" ? data.name : "Unknown"}</h4>
       <img
         src={data.image ? data.image : "/images/knight.jpg"}
